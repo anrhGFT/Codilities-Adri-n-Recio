@@ -15,23 +15,35 @@ class Solution {
         int oneCounter=0;
         String  binaryNum=Integer.toBinaryString(N);
         
-        for(int i=0;i<binaryNum.length();i++){
-            if(gapCounter>largestGapCount){
-                largestGapCount=gapCounter;
-            }
-            if(binaryNum.charAt(i)=='0'){
+        for(int i=0;i<binaryNum.length();i++){ 
+            if(binaryNum.charAt(i)=='1' && gapCounter==0){   
+              gapCounter=0;
+              oneCounter=1;
+           } 
+           if(binaryNum.charAt(i)=='0' && oneCounter==1){
                     gapCounter++;
             }
-          if(binaryNum.charAt(i)!='0'){
-              gapCounter=0;
-              oneCounter++;
-          }
+            if(binaryNum.charAt(i)=='1' && oneCounter==1 && gapCounter>0)
+            {oneCounter++;}
+           if(oneCounter==2 && binaryNum.charAt(i)=='1') {
+                if(gapCounter>largestGapCount){
+                largestGapCount=gapCounter;
+                gapCounter=0;
+                oneCounter=1;
+            }
+            else{gapCounter=0;
+                    oneCounter=1;}
+
+            }
+
+
+           
+            
+          
           
 }
         
-         if (oneCounter==1 && binaryNum.charAt(binaryNum.length() - 1)=='0'){
-                    largestGapCount=0;
-                }
+       
         
         return largestGapCount;
         
