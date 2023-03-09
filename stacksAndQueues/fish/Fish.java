@@ -41,11 +41,6 @@ public class Fish {
         return fishList;
     }
 
-    public Boolean checkIfBothFishGotSameSize(int movingFishSize, int comparingFishSize) {
-
-        return movingFishSize == comparingFishSize;
-    }
-
     public Boolean checkIfishIsbigger(int movingFishSize, int comparingFishSize) {
 
         return movingFishSize > comparingFishSize;
