@@ -50,7 +50,6 @@ public class MaxDoubleSliceSum {
 
         arrSlice[startIndx]=0;
         arrSlice[middleIndx]=0;
-        //if(startIndx==arr.length-1 || substractingIndex==0)return Arrays.stream(arr, startIndx, arr.length).sum(); 
        return Arrays.stream(arrSlice, startIndx, arr.length + substractingIndex).sum();
      }
 }
